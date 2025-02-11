@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/sidebar"
 import { SearchForm } from "./search-form"
 import NavMain from "./nav-main"
+import Link from "next/link"
 
 const data = {
   user: {
@@ -141,7 +142,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <div className="font-bold px-3 text-lg">Overview</div>
+        <Link href={"/"}><div className="font-bold px-3 text-lg">Overview</div></Link>
         <SearchForm />
       </SidebarHeader>
       <SidebarContent>
