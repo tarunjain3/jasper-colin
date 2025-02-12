@@ -6,6 +6,11 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Home",
+  };
 
 const HomeTab3Page = () => {
     return (

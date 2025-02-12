@@ -1,5 +1,3 @@
-'use client'
-
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -8,6 +6,11 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Security",
+};
 
 const SecurityPage = () => {
     return (
@@ -35,7 +38,7 @@ const SecurityPage = () => {
                     <div className="aspect-video rounded-xl bg-muted/50" />
                     <div className="aspect-video rounded-xl bg-muted/50" />
                 </div>
-                
+
             </div>
         </>
     )

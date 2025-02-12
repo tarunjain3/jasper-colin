@@ -6,6 +6,11 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Project",
+  };
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
     const ids = ["project-1", "project-2", "project-3"];
@@ -13,6 +18,7 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
         id,
     }));
 }
+
 
 type ProjectPageParams = {
     id: string;

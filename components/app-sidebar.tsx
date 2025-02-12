@@ -15,7 +15,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { SearchForm } from "./search-form"

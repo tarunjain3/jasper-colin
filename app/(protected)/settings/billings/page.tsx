@@ -1,5 +1,3 @@
-'use client'
-
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -8,6 +6,11 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Billings",
+  };
 
 const BillingsPage = () => {
     return (

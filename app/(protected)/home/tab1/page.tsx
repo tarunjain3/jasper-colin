@@ -6,7 +6,12 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+    title: "Home",
+};
 
 const HomeTab1Page = () => {
     return (
@@ -34,7 +39,7 @@ const HomeTab1Page = () => {
                     <div className="aspect-video rounded-xl bg-muted/50" />
                     <div className="aspect-video rounded-xl bg-muted/50" />
                 </div>
-                
+
             </div>
         </>
     )

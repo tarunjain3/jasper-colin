@@ -14,9 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jasper Colin",
-  description: "Jasper Colin assignment",
-};
+  title: {
+    default: 'Dashboard',
+    template: '%s | Jasper colin',
+  }
+}
 
 export default function RootLayout({
   children,

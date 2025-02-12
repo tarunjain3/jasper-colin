@@ -1,11 +1,14 @@
-'use client'
-
 import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
 } from "@/components/ui/breadcrumb"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Messages",
+  };
 
 const MessagesPage = () => {
     return (

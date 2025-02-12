@@ -7,8 +7,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import DashboardLoader from "@/features/dashboard/dashboard-loader"
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 const DashboardPage1 = () => {
   return (
