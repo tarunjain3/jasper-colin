@@ -1,4 +1,3 @@
-'use client'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -6,12 +5,21 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { useParams } from "next/navigation";
+} from "@/components/ui/breadcrumb";
 
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+    const ids = ["project-1", "project-2", "project-3"];
+    return ids.map((id) => ({
+        id,
+    }));
+}
 
-const ProjectPage = () => {
-    const { id }: { id: string } = useParams();
+type ProjectPageParams = {
+    id: string;
+};
+
+const ProjectPage = async ({ params }: { params: Promise<ProjectPageParams> }) => {
+    const { id } = (await params);
     return (
         <>
             <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -37,9 +45,9 @@ const ProjectPage = () => {
                     <div className="aspect-video rounded-xl bg-muted/50" />
                     <div className="aspect-video rounded-xl bg-muted/50" />
                 </div>
-                
             </div>
         </>
-    )
-}
-export default ProjectPage
+    );
+};
+
+export default ProjectPage;

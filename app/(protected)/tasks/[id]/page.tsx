@@ -1,5 +1,3 @@
-'use client'
-
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -8,11 +6,20 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { useParams } from "next/navigation";
 
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+    const ids = ["project-1", "project-2", "project-3"];
+    return ids.map((id) => ({
+        id,
+    }));
+}
 
-const TaskPage = () => {
-    const { id }: { id: string } = useParams();
+type TasksPageParams = {
+    id: string;
+};
+
+const TaskPage = async ({ params }: { params: Promise<TasksPageParams> }) => {
+    const { id } = (await params);
     return (
         <>
             <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -21,7 +28,7 @@ const TaskPage = () => {
                         <BreadcrumbList>
                             <BreadcrumbItem className="hidden md:block">
                                 <BreadcrumbLink href="#">
-                                    Projects
+                                    Tasks
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator className="hidden md:block" />
@@ -38,7 +45,7 @@ const TaskPage = () => {
                     <div className="aspect-video rounded-xl bg-muted/50" />
                     <div className="aspect-video rounded-xl bg-muted/50" />
                 </div>
-                
+
             </div>
         </>
     )
