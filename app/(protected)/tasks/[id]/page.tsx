@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/breadcrumb"
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
-    const ids = ["project-1", "project-2", "project-3"];
+    const ids = ["task-1", "task-2", "task-3"];
     return ids.map((id) => ({
         id,
     }));

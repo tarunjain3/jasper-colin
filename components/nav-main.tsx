@@ -64,9 +64,9 @@ const NavMain = ({
                       {item.items.map((subItem) => (
                         <SidebarMenuSubItem key={subItem.title}>
                           <SidebarMenuSubButton asChild isActive={isActiveTab(item.url + subItem.url)}>
-                            <a href={item.url + subItem.url}>
+                            <Link href={item.url + subItem.url}>
                               <span>{subItem.title}</span>
-                            </a>
+                            </Link>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}
