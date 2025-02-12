@@ -15,11 +15,13 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { SearchForm } from "./search-form"
 import NavMain from "./nav-main"
 import Link from "next/link"
+import { ModeToggle } from "./theme-toggle"
 
 const data = {
   user: {
@@ -149,6 +151,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
+        <ModeToggle />
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
