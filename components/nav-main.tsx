@@ -17,6 +17,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 
 type SidebarItem = {
@@ -75,10 +76,10 @@ const NavMain = ({
               </Collapsible>
             ) : (
               <SidebarMenuButton asChild isActive={isActiveTab(item.url)}>
-                <a href={item.url}>
+                <Link href={item.url}>
                   {item.icon && <item.icon />}
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             )}
           </SidebarMenuItem>
